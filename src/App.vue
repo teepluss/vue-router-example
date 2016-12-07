@@ -1,19 +1,30 @@
 <template>
   <div id="app">
-    <hero></hero>
-    <navigator></navigator>
+    <hero :quote="quote"></hero>
     <router-view></router-view>
   </div>
 </template>
 <script>
 import Hero from './components/partials/Hero'
-import Navigator from './components/partials/Navigator'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'app',
   components: {
-    Hero,
-    Navigator
+    Hero
+  },
+  mounted () {
+    this.getRandomQuote()
+  },
+  computed: {
+    ...mapGetters([
+      'quote'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getRandomQuote'
+    ])
   }
 }
 </script>
@@ -27,5 +38,9 @@ export default {
 h1.brand {
   font-size: 2em;
   color: #FFFFFF;
+}
+.quote {
+  max-width: 500px;
+  color: #666;
 }
 </style>

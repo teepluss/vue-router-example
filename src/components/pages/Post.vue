@@ -1,13 +1,24 @@
 <template>
-  <div id="posts-view">
-    <div v-if="ready">
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.body }}</p>
+  <section id="pages-post" class="section">
+    <div class="container">
+      <div v-if="ready">
+        <div class="level">
+          <h2 class="title level-left">
+            {{ post.title }}
+          </h2>
+          <div class="level-right">
+            <a class="button is-small is-outlined" @click.prevent="goBack()">
+              Go back
+            </a>
+          </div>
+        </div>
+        <div class="content">{{ post.body }}</div>
+      </div>
+      <div v-else>
+        Loading.....
+      </div>
     </div>
-    <div v-else>
-      Loading.....
-    </div>
-  </div>
+  </section>
 </template>
 <script>
 import { mapGetters } from 'vuex'
@@ -27,6 +38,11 @@ export default {
     ...mapGetters([
       'post'
     ])
+  },
+  methods: {
+    goBack () {
+      this.$router.back()
+    }
   },
   watch: {
     post (val, old) {
