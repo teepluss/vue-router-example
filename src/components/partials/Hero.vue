@@ -58,7 +58,10 @@
             </p>
           </div>
           <div class="column is-narrow">
-            <div id="carbon" class="box quote" v-if="quote !== null" v-html="quote[0].content"></div>
+          <div class="quote">
+            <div id="carbon" class="box" v-if="quote !== null" v-html="quoteContent"></div>
+            <h5 class="level-right" v-html="quoteAuthor"></h5>
+          </div>
           </div>
         </div>
       </div>
@@ -75,8 +78,37 @@ export default {
   components: {
     HeroNavigator
   },
-  mounted () {
-    // console.log(this.quote)
+  computed: {
+    quoteContent () {
+      return this.quote.content
+    },
+    quoteAuthor () {
+      return '“' + this.quote.title + '”'
+    }
   }
 }
 </script>
+<style lang="scss">
+$font-size: 14px;
+$line-height: 1.4;
+$lines-to-show: 3;
+.quote {
+  max-height: 100px;
+  width: 355px;
+}
+.quote .box {
+  margin-bottom: 5px;
+}
+.quote p {
+  display: block;
+  display: -webkit-box;
+  height: $font-size*$line-height*$lines-to-show;
+  color: #666;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

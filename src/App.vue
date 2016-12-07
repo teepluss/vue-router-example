@@ -19,6 +19,9 @@ export default {
   },
   mounted () {
     this.getRandomQuote()
+    setInterval(() => {
+      this.getRandomQuote()
+    }, 10000)
   },
   computed: {
     ...mapGetters([
@@ -46,8 +49,5 @@ h1.brand {
   font-size: 2em;
   color: #FFFFFF;
 }
-.quote {
-  max-width: 500px;
-  color: #666;
-}
+
 </style>

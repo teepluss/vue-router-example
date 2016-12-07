@@ -1,13 +1,14 @@
 import * as types from '../../mutation-types'
 import quote from '../../../api/quote'
+import _ from 'lodash'
 
 export default {
   state: {
-    quote: null
+    quote: []
   },
   mutations: {
     [types.RECIEVE_QUOTE] (state, quote) {
-      state.quote = quote
+      state.quote = _.head(quote)
     }
   },
   actions: {
