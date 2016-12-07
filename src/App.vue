@@ -1,17 +1,21 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <hero :quote="quote"></hero>
     <router-view></router-view>
+    <foot></foot>
   </div>
 </template>
 <script>
+import 'bulma/bulma.sass'
 import Hero from './components/partials/Hero'
+import Foot from './components/partials/Foot'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'app',
   components: {
-    Hero
+    Hero,
+    Foot
   },
   mounted () {
     this.getRandomQuote()
@@ -30,6 +34,9 @@ export default {
 </script>
 
 <style>
+[v-cloak] {
+  display: none;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -7,7 +7,7 @@
             {{ post.title }}
           </h2>
           <div class="level-right">
-            <a class="button is-small is-outlined" @click.prevent="goBack()">
+            <a class="button is-small is-outlined" @click.prevent="goBack">
               Go back
             </a>
           </div>
@@ -51,3 +51,11 @@ export default {
   }
 }
 </script>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+</style>

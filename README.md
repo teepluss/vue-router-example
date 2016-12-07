@@ -1,6 +1,18 @@
-# route.vue
+# Vue with router app.
 
-> A Vue.js project
+This is lab project for learning about
+- Vue
+- Vuex
+- Vue Router
+- Vue Pagination
+
+# Screenshot
+![Cart](http://i.imgur.com/HDqivN2.png)
+
+# Features
+- Read products from mocking json api.
+- Navigate to another page.
+- Pagination
 
 ## Build Setup
 
@@ -23,5 +35,3 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -2,15 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import ElementUI from 'element-ui'
 import store from './store'
 import App from './App'
 import Home from './components/pages/Home'
 import Posts from './components/pages/Posts'
 import Post from './components/pages/Post'
 
-import 'bulma/css/bulma.css'
-
 Vue.use(VueRouter)
+Vue.use(ElementUI)
 
 const routes = [
   { name: 'home', path: '/', component: Home },
