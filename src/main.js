@@ -5,18 +5,11 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import store from './store'
 import App from './App'
-import Home from './components/pages/Home'
-import Posts from './components/pages/Posts'
-import Post from './components/pages/Post'
 
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 
-const routes = [
-  { name: 'home', path: '/', component: Home },
-  { name: 'posts', path: '/posts', component: Posts },
-  { name: 'posts.view', path: '/posts/:id', component: Post }
-]
+import routes from './routes'
 
 const router = new VueRouter({
   mode: 'history',

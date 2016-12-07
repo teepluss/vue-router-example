@@ -7,7 +7,7 @@
         </p>
         <p>
           <a class="icon" href="https://github.com/teepluss">
-            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-road"></i>
           </a>
         </p>
       </div>

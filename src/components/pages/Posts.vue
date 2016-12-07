@@ -35,6 +35,7 @@ export default {
       this.$router.replace({
         name: 'posts', query: { page: 1 }
       })
+      return false
     }
     this.$store.dispatch('fetchPosts', page)
   },
