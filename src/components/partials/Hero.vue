@@ -59,7 +59,7 @@
           </div>
           <div class="column is-narrow">
           <div class="quote">
-            <div id="carbon" class="box" v-if="quote !== null" v-html="quoteContent"></div>
+            <div id="carbon" class="box" v-html="quoteContent"></div>
             <h5 class="level-right" v-html="quoteAuthor"></h5>
           </div>
           </div>
@@ -71,20 +71,32 @@
 </template>
 <script>
 import HeroNavigator from './HeroNavigator'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'hero',
-  props: ['quote'],
   components: {
     HeroNavigator
   },
+  mounted () {
+    this.getRandomQuotes()
+  },
+  methods: {
+    ...mapActions([
+      'getRandomQuotes',
+      'getQuote'
+    ])
+  },
   computed: {
+    quoteAuthor () {
+      return this.quote.title
+    },
     quoteContent () {
       return this.quote.content
     },
-    quoteAuthor () {
-      return '“' + this.quote.title + '”'
-    }
+    ...mapGetters([
+      'quote'
+    ])
   }
 }
 </script>

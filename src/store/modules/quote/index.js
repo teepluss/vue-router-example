@@ -4,19 +4,28 @@ import _ from 'lodash'
 
 export default {
   state: {
-    quote: []
+    quotes: [],
+    quote: {}
   },
   mutations: {
+    [types.RECIEVE_QUOTES] (state, quotes) {
+      state.quotes = quotes
+    },
     [types.RECIEVE_QUOTE] (state, quote) {
       state.quote = _.head(quote)
     }
   },
   actions: {
-    getRandomQuote ({ commit }) {
-      quote.getRandomQuote()
+    getRandomQuotes ({ state, commit }) {
+      quote.getRandomQuotes()
         .then((response) => {
+          commit(types.RECIEVE_QUOTES, response.data)
           commit(types.RECIEVE_QUOTE, response.data)
         })
+
+      setInterval(() => {
+        commit(types.RECIEVE_QUOTE, _.shuffle(state.quotes))
+      }, 5000)
     }
   },
   getters: {

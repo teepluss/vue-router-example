@@ -1,3 +1,4 @@
 export const RECIEVE_POSTS = 'RECIEVE_POSTS'
 export const RECIEVE_POST = 'RECIEVE_POST'
+export const RECIEVE_QUOTES = 'RECIEVE_QUOTES'
 export const RECIEVE_QUOTE = 'RECIEVE_QUOTE'

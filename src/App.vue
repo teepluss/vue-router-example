@@ -1,6 +1,6 @@
 <template>
   <div id="app" v-cloak>
-    <hero :quote="quote"></hero>
+    <hero></hero>
     <router-view></router-view>
     <foot></foot>
   </div>
@@ -9,7 +9,6 @@
 import 'bulma/bulma.sass'
 import Hero from './components/partials/Hero'
 import Foot from './components/partials/Foot'
-import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'app',
@@ -18,20 +17,7 @@ export default {
     Foot
   },
   mounted () {
-    this.getRandomQuote()
-    setInterval(() => {
-      this.getRandomQuote()
-    }, 10000)
-  },
-  computed: {
-    ...mapGetters([
-      'quote'
-    ])
-  },
-  methods: {
-    ...mapActions([
-      'getRandomQuote'
-    ])
+    //
   }
 }
 </script>
