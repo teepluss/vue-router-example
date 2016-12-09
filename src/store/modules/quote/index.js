@@ -25,7 +25,7 @@ export default {
 
       setInterval(() => {
         commit(types.RECIEVE_QUOTE, _.shuffle(state.quotes))
-      }, 5000)
+      }, 10000)
     }
   },
   getters: {
