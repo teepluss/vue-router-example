@@ -83,8 +83,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getRandomQuotes',
-      'getQuote'
+      'getRandomQuotes'
     ])
   },
   computed: {
